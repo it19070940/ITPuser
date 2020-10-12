@@ -24,7 +24,7 @@ class _ChooseCanteenState extends State<ChooseCanteen> {
   String userID='a@bcom';
   @override
   void initState() {
-    userID = userData['emailDot'];
+    userID = userData["emailDot"];
     print(userData);
     dRef.child('canteens').once().then((value) {
       Map val = value.value;
@@ -45,12 +45,22 @@ class _ChooseCanteenState extends State<ChooseCanteen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Canteens'),),
+     // appBar: AppBar(title: Text('Canteens'),
+     // ),
       body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("imagea/adadads.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
         child: ListView.builder(
+            padding: EdgeInsets.fromLTRB(20, 580, 20, 90),
             itemCount: canteens.length,
             itemBuilder:(context,index) {
               return FlatButton(
+                color: Colors.white,
+                textColor: Colors.white,
                 onPressed: (){
                   _pref.then((value) {
                     value.setString('canteenCurrent', canteens[canteenNames[index]]['cName']);
@@ -60,8 +70,10 @@ class _ChooseCanteenState extends State<ChooseCanteen> {
                       builder: (BuildContext context) => MyHomePage(canteens[canteenNames[index]]['cName'],userData)));
                 },
                 child: Card(
-                  child: Text(canteens[canteenNames[index]]['cName']),
-                ),
+                    child: Text(canteens[canteenNames[index]]['cName'],
+                        style: TextStyle(
+                            fontSize: 25, fontWeight: FontWeight.bold)),
+                  ),
               );
             } ),
       ),

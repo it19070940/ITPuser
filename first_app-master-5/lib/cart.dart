@@ -61,6 +61,9 @@ class _MycartState extends State<Mycart> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: new AppBar(
+        backgroundColor: Colors.redAccent,
+        title: Text("Cart"),
+        centerTitle: true,
         leading: IconButton(
           icon: Icon(
             Icons.keyboard_arrow_left,
@@ -175,7 +178,7 @@ class _MycartState extends State<Mycart> {
               width: 150.0,
               height: 50,
               padding: const EdgeInsets.only(top: 16.0),
-              child: Center(child: Text('$totalCost',style: TextStyle(fontSize: 20),)),
+              child: Center(child: Text('SUBTOTAL-$totalCost',style: TextStyle(fontSize: 20),)),
             ),
             new Container(
               width: 400.0,

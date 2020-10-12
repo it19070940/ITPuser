@@ -87,6 +87,7 @@ class _HomedishState extends State<Homedish> {
     return Scaffold(
       appBar: new AppBar(
         centerTitle: true,
+        backgroundColor: Colors.redAccent,
         title: new Text('Delicious'),
         actions: <Widget>[
           IconButton(
@@ -169,6 +170,7 @@ class _HomedishState extends State<Homedish> {
                                               child: Image.network(
                                                trend[trendKeys[index]]['imageLink'],
                                                 height: 100,
+                                                width: 100,
                                               )),
                                         ),
                                         Padding(
